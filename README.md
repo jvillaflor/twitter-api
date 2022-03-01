@@ -7,6 +7,7 @@ Twitter-api haves a feature that tweets current temperature and 5-days forecast 
 
 * Rails version: 7.0.2
 
+
 ## Usage
 
 Clone this repository.
