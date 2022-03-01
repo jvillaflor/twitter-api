@@ -48,12 +48,18 @@ class OpenWeather
         avgs = {}
         temps = list.map{ |v| [ v[:dt_txt], v[:main][:temp] ] }.to_h
         dates = temps.keys.map { |v| v.split(" ")[0] }.uniq
+
+        # delete first date because today's average is being calculated too and
+        # the requirements doesnt ask to show that.
+        dates = dates.drop(1)
+
         dates.each do |d|
             matched = temps.select {|k,v| k.include?(d) }
             avg = matched.values.inject{ |sum, num| sum + num }
             avg = (avg / matched.size).round(@celsius_precision)
             avgs[d] = avg
         end
+        
         avgs
     end
 end

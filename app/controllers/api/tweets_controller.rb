@@ -14,7 +14,7 @@ class Api::TweetsController < ApplicationController
       tweet = tweeter.tweet_temperature(appid)
       
       if tweet.created?
-        render json: { status: 'tweeted', url: tweet.url }, status: :created
+        render json: { status: 'tweeted', url: tweet.url.host + tweet.url.path }, status: :created
       else
         render json: { status: 'error', message: "Internal Server Error" }, status: :error
       end

@@ -1,25 +1,24 @@
-# README
+## Twitter Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Twitter-api haves a feature that tweets current temperature and 5-days forecast temperatures average. Data is collected from Open Weather Map (https://openweathermap.org/).
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version: 3.1.1
 
-* System dependencies
+* Rails version: 7.0.2
 
-* Configuration
+## Usage
 
-* Database creation
+Clone this repository.
 
-* Database initialization
+Run 
+    rails s 
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Make a post request like:
+    curl -X POST http://localhost:3000/api/tweets/temperatures -H 'Content-Type: application/json' -d '{"appid":"<your_appid_here>"}'
 
-* Deployment instructions
+More info about appid: https://openweathermap.org/appid.
+Note you have to signup openweathermap.org to create an appid.
 
-* ...
-# twitter-api
+The API is documented by using Apipie (https://github.com/Apipie/apipie-rails)
