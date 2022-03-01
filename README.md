@@ -13,10 +13,12 @@ Twitter-api haves a feature that tweets current temperature and 5-days forecast 
 Clone this repository.
 
 Run 
+
     rails s 
 
 
 Make a post request like:
+
     curl -X POST http://localhost:3000/api/tweets/temperatures -H 'Content-Type: application/json' -d '{"appid":"<your_appid_here>"}'
 
 More info about appid: https://openweathermap.org/appid.
